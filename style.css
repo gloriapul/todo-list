@@ -1,0 +1,135 @@
+article { margin: 0px 1em; }
+
+.header { 
+    text-align: center;
+    margin:0 auto;
+    
+}
+
+#theTasks > li { 
+    margin: 10px;
+    margin-right:40px;
+    border-radius: 25px;
+    padding: 10px;
+    border: solid 2px rgba(0, 0, 0, 0.2);
+    max-height: 150px;
+    box-shadow: 0px 3px 3px 1px rgba(0,0,0,.05);
+}
+
+body {
+    color: #0B1822;
+    background-color: #FCFCFC;
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+button {
+    border: solid 2px rgba(0, 0, 0, 0.5);
+    border-radius: 3px;
+    margin-right: 3px;
+}
+
+.deleteTagBtn > button {
+    margin-bottom: 3px;
+}
+
+#tags > label { 
+    line-break: normal;
+}
+
+nav > ul {
+    padding: 0px;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+textarea, select, input{
+    padding: 2px;
+    background-color:#FCFCFC;
+    border-radius: 5px 5px 5px 5px;
+    border: solid 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 3px 3px 1px rgba(0,0,0,.01);
+
+}
+
+nav > ul > li {
+    position: relative;
+    display: inline-block;
+    
+}
+
+button.nav {
+    width: 100%;
+    font-size: 150%;
+    font-weight: bold;
+}
+
+.dropContent button {
+    width: 100%;
+    font-size: 150%;
+    font-weight: bold;
+    text-align: left;
+}
+
+.dropButton {
+    background-color: #2860AF;
+    border: 2px solid #134C9C;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 150%;
+    text-align: center;
+    box-shadow: 0px 3px 3px 1px rgba(0,0,0,.05);
+}
+
+.dropButton:hover, .dropButton:focus {
+    background-color:#134C9C;
+}
+
+.dropContent, .dropClickContent{
+    font-size: 120%;
+    position: absolute;
+    z-index: 1;
+    display: none;
+    border-radius: 5px 5px 5px 5px;
+    border: solid 2px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 3px 3px 1px rgba(0,0,0,.05);
+}
+
+.dropClickContent {
+    background-color: #FFE1E3;
+    padding: 20px;
+}
+
+.show {
+    display: block;
+}
+
+#addTask {
+    background-color: #FFE1E3;
+}
+
+
+#addTask textarea {
+    max-width: 100%;
+}
+
+.template {
+    display: block;
+    opacity: 0.3;
+}
+
+.done { opacity: 0.5; border-style: dotted; }
+
+ul {
+    list-style-type: none;
+}
+
+/* horizontal bar when they all fit */
+
+@media all and (min-width: 768px) {
+    nav > ul {
+	    grid-template-columns: repeat(4, 1fr);
+    }
+}

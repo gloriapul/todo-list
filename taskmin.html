@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>To-Do List</title>
+</head>
+<body>
+
+<article>
+    <div class="header" style="max-width:400px;">
+        <h1>To-Do List</h1>
+        <p>Create and set upcoming tasks you have due! You can select a due date, priority, and tag for each!</p>
+    </div>
+
+    <nav>
+        <ul>
+        <li><button class="nav dropButton" type="button">Add</button>
+            <div id="addTaskDropDown" class="dropClickContent">
+                <form id="addTask">
+                    <h2>Add Task</h2>
+                    <p><label for="taskText">Description</label></p>
+                    <textarea id="taskText" name="taskText" required></textarea>
+                    <p><label>Priority
+                            <select name="taskPriority">
+                                <option>Low</option>
+                                <option selected>Medium</option>
+                                <option>High</option>
+                            </select>
+                    </label></p>
+                    <p><label>Due Date
+                        <input id="taskDueDate" name="taskDueDate" type="date">
+                    </label></p>
+                    <label for="tags">Tag</label>
+                    <br>
+            
+                    <div id="tags">
+                        <label><input type="radio" name="tag" value="Work">
+                            Work</label>
+                        <br>
+                        <label><input type="radio" name="tag" value="Personal">
+                            Personal</label>
+                        <br>
+                    </div>
+                    <br>
+                    <button id="addTaskButton" type="button">Add</button>
+                    <button id="cancelAddTask" type="button">Cancel</button>
+                </form>
+            </div>
+        </li>
+        <li><button class="nav dropButton" type="button">Sort</button>
+            <div class="dropContent">
+                <button id="sortIdButton" type="button">by Id</button>
+                <button id="sortTagButton" type="button">by Tag</button>
+                <button id="sortDueDateButton" type="button">by Due Date</button>
+                <button id="sortPriorityButton" type="button">by Priority</button>
+            </div>
+        </li>
+        <li><button class="nav dropButton" type="button">Local</button>
+            <div class="dropContent">
+                <button id="saveLocalButton" type="button">Save</button>
+                <button id="loadLocalButton" type="button">Load</button>
+                <button id="resetLocalButton" type="button">Reset</button>
+            </div>
+        </li>
+        <li><button class="nav dropButton" type="button">Tags</button>
+            <div id="tagDropDown" class="dropClickContent">
+                    <h2>Manage Tags</h2>
+                    <div>
+                        <h4>Current Tags</h4>
+                        <ul id="addedTags">
+                            <li>
+                                <button class="deleteTagBtn">✖</button>
+                                <span class="tagName">Work</span>
+                            </li>
+                            <li>
+                                <button class="deleteTagBtn">✖</button>
+                                <span class="tagName">Personal</span>
+                            </li>
+                        </ul>
+                        <h4>Add Tag</h4>
+                        <form id="addTagForm">
+                            <label>
+                                Type       <input type="text" id="addTagInput" name="tagName"></label>
+                            <br><br>
+                            <label>
+                                Color  <input type="color" id="addTagColor" name="tagColor" value="#E9EBFF"></label>
+                            <br><br>
+                            <button id="addTagBtn" type="button">Update</button>
+                            <button id="cancelTagBtn" type="button">Cancel</button>
+                        </form>
+                    </div>
+            </div>
+        </li>
+        </ul>
+    </nav>
+    <div>
+
+    <ul id="theTasks">
+    </ul>
+    <ul class="template" id="task_elt_template">
+        <li class="task" style="margin: 10px;
+        box-shadow: 0px 3px 3px 1px rgba(0,0,0,.05);
+        border-radius: 25px;
+        margin-right:40px;
+        padding: 10px;
+        border: solid 2px rgba(0, 0, 0, 0.2); 
+        background-color: #E9EBFF" data-taskId="">
+            <span class="id">id</span>
+            <span class="due">date</span>
+            <span class="priority">priority</span>
+            <span class="tag">tag</span>
+            <p class="text">This is an example of a template task!</p>
+            <button type="button" class="markDone">&#x2714;</button>
+            <button type="button" class="delete">&#x2716;</button>
+        </li>
+    </ul>
+    </div>
+</article>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="task.js"></script>
+<script src="task-list.js"></script>
+<script src="dropdowns.js"></script>
+<script src="main.js"></script>
+<script src="dynamic-tags.js"></script>
+
+</body>
+</html>
