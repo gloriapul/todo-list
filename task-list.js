@@ -42,7 +42,7 @@ class TaskList{
     // deletes the task object with given id, removed from internal array and invokes delete method
     deleteTask(){
         let index = this.taskObjects.findIndex(function (task){
-            return task["id"] == task;
+            return task["id"] == task.id;
         });
         this.taskObjects[index].delete(); // ui
         this.taskObjects.splice(index, 1);} // array

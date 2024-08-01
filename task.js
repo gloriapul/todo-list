@@ -77,8 +77,8 @@ class Task{
     
         $li.append($IDSpan);
         $li.append($dueDateSpan);
-        $li.append($prioritySpan);
         $li.append($tagSpan);
+        $li.append($prioritySpan);
         $li.append($textP);
         $li.append($markDoneButton);
         $li.append($deleteButton);
